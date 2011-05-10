@@ -7,7 +7,11 @@ geoip = pygeoip.GeoIP('GeoLiteCity.dat')
 
 @app.route("/")
 def hello():
-    ip = str(request.remote_addr)
+    if request.args and request.args['ip']:
+        ip = request.args['ip']
+    else:
+        ip = str(request.remote_addr)
+
     record = geoip.record_by_addr(ip)
 
     return render_template('index.html', 
@@ -17,5 +21,4 @@ def hello():
 
 
 if __name__ == "__main__":
-    app.debug = True
     app.run()
