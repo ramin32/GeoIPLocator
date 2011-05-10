@@ -1,0 +1,17 @@
+GeoIP Locator 
+By: Ramin Rakhamimov (http://raminrakhamimov.com)
+
+Analyzes a client's ip and prints the city based record of his/her location.
+Utilizes MaxMind's Python API (http://code.google.com/p/pygeoip/) and GeoLiteCity database (http://www.maxmind.com/app/geolitecity).
+The app is written using the Python Flask web framework (http://flask.pocoo.org/).
+
+To run:
+pip install -r requirements.txt
+wget -N -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz 
+python app.py
+
+Finally, point your browser to: http://server_name:5000. Since localhost is not your actual ip, you must run the app on a remote server to get the appropriate record.
+
+To avoid cross-application dependency conflicts it is suggested to run the above commands in a virtualenv environment.
+

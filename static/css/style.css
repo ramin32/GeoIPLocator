@@ -1,0 +1,42 @@
+
+body{
+    font-family:verdana,helvetica,arial,sans-serif;
+    background-color: #ddedcc;
+    text-align:center;
+    width:700px;
+    margin:auto auto;
+
+}
+
+table { 
+    border-collapse: collapse;
+    margin:auto auto;
+}
+
+table, td, th
+{
+    border:1px solid #98bf21;
+    padding: 5px 10px;
+}
+
+.odd {
+    background-color: #FFFFFF;
+}
+.even {
+    background-color: #eaf2d3;
+}
+th
+{
+    background-color:#a7c942;
+    color:white;
+    text-align:left;
+}
+
+
+#footer {
+    padding-top:20px;
+}
+
+.error {
+    color: red;
+}

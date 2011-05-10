@@ -1,0 +1,42 @@
+<!doctype html>
+{% set title = 'GeoIP Locator' %}
+
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1> {{title}} </h1>
+        </div>
+
+        <h3>Welcome {{ip}}, we have analyzed your ip:</h3>
+
+        {% if record %}
+        
+            <table>
+                <tr>
+                    <th> Key </th>
+                    <th> Value </th>
+                </tr>
+                {% for key in record %}
+                <tr class="{{ loop.cycle('odd', 'even') }}">
+                        <td>{{ key }} </td>
+                        <td>{{record[key]}}  </td>      
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div class="error">
+                We apologize, but your ip does not have a record.
+            </div>
+        {% endif %}
+
+        <div id="footer">
+            Copyright &copy  {{year}} {{title}}
+        </div>
+    </div>
+</body>
