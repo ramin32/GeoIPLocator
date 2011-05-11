@@ -6,7 +6,7 @@ app = Flask(__name__)
 geoip = pygeoip.GeoIP('GeoLiteCity.dat')
 
 @app.route("/")
-def hello():
+def analyze_ip():
     if request.args and request.args['ip']:
         ip = request.args['ip']
     else:
